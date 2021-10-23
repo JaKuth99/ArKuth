@@ -1,0 +1,6 @@
+configuration {
+  theme:"~/.cache/wal/colors-rofi-dark";
+  font: "Roboto 11";
+  lines: 3;
+  modi: "window,drun,run,ssh";
+}
