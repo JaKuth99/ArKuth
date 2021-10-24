@@ -21,7 +21,6 @@ cd ~
 PKGS=(
 'autojump'
 'awesome-terminal-fonts'
-'firefox'
 'nerd-fonts-fira-code'
 'noto-fonts-emoji'
 'ttf-droid'
@@ -35,13 +34,13 @@ for PKG in "${PKGS[@]}"; do
 done
 
 export PATH=$PATH:~/.local/bin
-cp -r Wallpapers ~/Pictures
+cp -r root/ArKuth/dotfiles/Wallpapers ~/Pictures
 wal -i ~/Pictures/Wallpapers/Fantasy-Samurai.jpg
 echo '(cat ~/.cache/wal/sequences &)' >> ~/.bashrc
 echo 'wal -R' >> ~/.xinitrc
-cp -r .config/rofi/* ~/.config/rofi/
-cp -r .config/polybar/* ~/.config/polybar/
-cp -r .i3/config ~/.i3/config
+cp -r root/ArKuth/dotfiles/.config/rofi/* ~/.config/rofi/
+cp -r root/ArKuth/dotfiles/.config/polybar/* ~/.config/polybar/
+cp -r root/ArKuth/dotfiles/.i3/config ~/.i3/config
 
 
 sleep 1
