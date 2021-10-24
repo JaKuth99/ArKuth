@@ -12,17 +12,6 @@ echo -e "\nFINAL SETUP AND CONFIGURATION"
 
 # ------------------------------------------------------------------------
 
-echo -e "\nEnabling Login Display Manager"
-
-sudo systemctl enable sddm.service
-
-echo -e "\nSetup SDDM Theme"
-
-sudo cat <<EOF > /etc/sddm.conf
-[Theme]
-Current=Nordic
-EOF
-
 # ------------------------------------------------------------------------
 
 echo -e "\nEnabling the cups service daemon so we can print"

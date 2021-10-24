@@ -61,6 +61,7 @@ PKGS=(
 'vim'
 'python3'
 'python-pip'
+'imagemagick'
 'jre-openjdk'
 'jdk-openjdk'
 'code'
