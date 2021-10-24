@@ -78,6 +78,9 @@ PKGS=(
 'pulseaudio'
 'pavucontrol'
 'firefox'
+'dialog'
+'netctl'
+'xorg-xinit'
 )
 
 for PKG in "${PKGS[@]}"; do
