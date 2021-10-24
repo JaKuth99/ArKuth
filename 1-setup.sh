@@ -81,6 +81,7 @@ PKGS=(
 'dialog'
 'netctl'
 'xorg-xinit'
+'dhcpcd'
 )
 
 for PKG in "${PKGS[@]}"; do
