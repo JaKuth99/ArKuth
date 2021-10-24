@@ -77,7 +77,7 @@ PKGS=(
 'volumeicon'
 'pulseaudio'
 'pavucontrol'
-
+'firefox'
 )
 
 for PKG in "${PKGS[@]}"; do
