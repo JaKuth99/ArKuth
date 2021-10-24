@@ -37,6 +37,7 @@ export PATH=$PATH:~/.local/bin
 cp -r ~/ArKuth/dotfiles/Wallpapers ~/Pictures
 wal -i ~/Pictures/Wallpapers/Fantasy-Samurai.jpg
 echo '(cat ~/.cache/wal/sequences &)' >> ~/.bashrc
+echo 'exec i3' >> ~/.xinitrc
 echo 'wal -R' >> ~/.xinitrc
 cp -r ~/ArKuth/dotfiles/rofi/* ~/.config/rofi/
 cp -r ~/ArKuth/dotfiles/polybar/* ~/.config/polybar/
