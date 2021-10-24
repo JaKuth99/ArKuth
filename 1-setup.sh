@@ -96,7 +96,7 @@ PKGS=(
 'xorg-server'
 'xorg-xinit'
 'dhcpcd'
-
+'rxvt-unicode'
 )
 
 for PKG in "${PKGS[@]}"; do
