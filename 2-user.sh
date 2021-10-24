@@ -34,7 +34,13 @@ for PKG in "${PKGS[@]}"; do
 done
 
 export PATH=$PATH:~/.local/bin
-
+cp -r ~/ArKuth/dotfiles/Wallpapers ~/Pictures
+wal -i ~/Pictures/Wallpapers/Fantasy-Samurai.jpg
+echo '(cat ~/.cache/wal/sequences &)' >> ~/.bashrc
+echo 'wal -R' >> ~/.xinitrc
+cp -r ~/ArKuth/dotfiles/.config/rofi/* ~/.config/rofi/
+cp -r ~/ArKuth/dotfiles/.config/polybar/* ~/.config/polybar/
+cp -r ~/ArKuth/dotfiles/.i3/config ~/.i3/config
 
 sleep 1
 
