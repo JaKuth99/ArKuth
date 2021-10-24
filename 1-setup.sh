@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------
-#   █████╗ ██████╗  ██████╗██╗  ██╗████████╗██╗████████╗██╗   ██╗███████╗
-#  ██╔══██╗██╔══██╗██╔════╝██║  ██║╚══██╔══╝██║╚══██╔══╝██║   ██║██╔════╝
-#  ███████║██████╔╝██║     ███████║   ██║   ██║   ██║   ██║   ██║███████╗
-#  ██╔══██║██╔══██╗██║     ██╔══██║   ██║   ██║   ██║   ██║   ██║╚════██║
-#  ██║  ██║██║  ██║╚██████╗██║  ██║   ██║   ██║   ██║   ╚██████╔╝███████║
-#  ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝   ╚═╝    ╚═════╝ ╚══════╝
+#   █████╗ ██████╗ ██╗  ██╗██╗   ██╗████████╗██╗  ██╗
+#  ██╔══██╗██╔══██╗██║ ██╔╝██║   ██║╚══██╔══╝██║  ██║
+#  ███████║██████╔╝█████╔╝ ██║   ██║   ██║   ███████║
+#  ██╔══██║██╔══██╗██╔═██╗ ██║   ██║   ██║   ██╔══██║
+#  ██║  ██║██║  ██║██║  ██╗╚██████╔╝   ██║   ██║  ██║
+#  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝
+                                                  
 #-------------------------------------------------------------------------
 echo "--------------------------------------"
 echo "--          Network Setup           --"
@@ -33,7 +34,7 @@ echo "       Setup Language to US and set locale       "
 echo "-------------------------------------------------"
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-timedatectl --no-ask-password set-timezone America/Chicago
+timedatectl --no-ask-password set-timezone America/New_York
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_COLLATE="" LC_TIME="en_US.UTF-8"
 
@@ -53,183 +54,29 @@ pacman -Sy --noconfirm
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
-'alsa-plugins' # audio plugins
-'alsa-utils' # audio utils
-'ark' # compression
-'audiocd-kio' 
-'autoconf' # build
-'automake' # build
 'base'
-'bash-completion'
-'bind'
-'binutils'
-'bison'
-'bluedevil'
-'bluez'
-'bluez-libs'
-'breeze'
-'breeze-gtk'
-'bridge-utils'
-'btrfs-progs'
-'celluloid' # video players
-'cmatrix'
-'code' # Visual Studio code
-'cronie'
-'cups'
-'dhcpcd'
-'dialog'
-'discover'
-'dmidecode'
-'dnsmasq'
-'dolphin'
-'dosfstools'
-'drkonqi'
-'edk2-ovmf'
-'efibootmgr' # EFI boot
-'egl-wayland'
-'exfat-utils'
-'flex'
-'fuse2'
-'fuse3'
-'fuseiso'
-'gamemode'
-'gcc'
-'gimp' # Photo editing
-'git'
-'gparted' # partition management
-'gptfdisk'
-'groff'
-'grub'
-'grub-customizer'
-'gst-libav'
-'gst-plugins-good'
-'gst-plugins-ugly'
-'haveged'
-'htop'
-'iptables-nft'
-'jdk-openjdk' # Java 17
-'kactivitymanagerd'
-'kate'
-'kvantum-qt5'
-'kcalc'
-'kcharselect'
-'kcron'
-'kde-cli-tools'
-'kde-gtk-config'
-'kdecoration'
-'kdenetwork-filesharing'
-'kdeplasma-addons'
-'kdesdk-thumbnailers'
-'kdialog'
-'keychain'
-'kfind'
-'kgamma5'
-'kgpg'
-'khotkeys'
-'kinfocenter'
-'kitty'
-'kmenuedit'
-'kmix'
-'konsole'
-'kscreen'
-'kscreenlocker'
-'ksshaskpass'
-'ksystemlog'
-'ksystemstats'
-'kwallet-pam'
-'kwalletmanager'
-'kwayland-integration'
-'kwayland-server'
-'kwin'
-'kwrite'
-'kwrited'
-'layer-shell-qt'
-'libguestfs'
-'libkscreen'
-'libksysguard'
-'libnewt'
-'libtool'
 'linux'
 'linux-firmware'
-'linux-headers'
-'lsof'
-'lutris'
-'lzop'
-'m4'
-'make'
-'milou'
-'nano'
-'neofetch'
-'networkmanager'
-'ntfs-3g'
-'okular'
-'openbsd-netcat'
-'openssh'
-'os-prober'
-'oxygen'
-'p7zip'
-'pacman-contrib'
-'patch'
-'picom'
-'pkgconf'
-'plasma-browser-integration'
-'plasma-desktop'
-'plasma-disks'
-'plasma-firewall'
-'plasma-integration'
-'plasma-nm'
-'plasma-pa'
-'plasma-sdk'
-'plasma-systemmonitor'
-'plasma-thunderbolt'
-'plasma-vault'
-'plasma-workspace'
-'plasma-workspace-wallpapers'
-'polkit-kde-agent'
-'powerdevil'
-'powerline-fonts'
-'print-manager'
-'pulseaudio'
-'pulseaudio-alsa'
-'pulseaudio-bluetooth'
-'python-pip'
-'qemu'
-'rsync'
-'sddm'
-'sddm-kcm'
-'snapper'
-'spectacle'
-'steam'
-'sudo'
-'swtpm'
-'synergy'
-'systemsettings'
-'terminus-font'
-'texinfo'
-'traceroute'
-'ufw'
-'unrar'
-'unzip'
-'usbutils'
-'vde2'
+'git'
 'vim'
-'virt-manager'
-'virt-viewer'
-'wget'
-'which'
-'wine-gecko'
-'wine-mono'
-'winetricks'
-'xdg-desktop-portal-kde'
-'xdg-user-dirs'
-'xorg'
-'xorg-server'
-'xorg-xinit'
-'zeroconf-ioslave'
-'zip'
-'zsh'
-'zsh-syntax-highlighting'
-'zsh-autosuggestions'
+'python3'
+'python-pip'
+'jre-openjdk'
+'jdk-openjdk'
+'code'
+'i3-gaps'
+'rofi'
+'python-pywal'
+'polybar'
+'feh'
+'autocpu-freq-git'
+'clipit'
+'nodejs'
+'discord'
+'volumeicon'
+'pulseaudio'
+'pavucontrol'
+
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -267,14 +114,14 @@ fi
 echo -e "\nDone!\n"
 if ! source install.conf; then
 	read -p "Please enter username:" username
-echo "username=$username" >> ${HOME}/ArchTitus/install.conf
+echo "username=$username" >> ${HOME}/ArKuth/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel,libvirt -s /bin/bash $username 
 	passwd $username
-	cp -R /root/ArchTitus /home/$username/
-    chown -R $username: /home/$username/ArchTitus
+	cp -R /root/ArKuth /home/$username/
+    chown -R $username: /home/$username/ArKuth
 else
 	echo "You are already a user proceed with aur installs"
 fi
