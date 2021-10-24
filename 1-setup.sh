@@ -119,7 +119,7 @@ echo "username=$username" >> ${HOME}/ArKuth/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel,libvirt -s /bin/bash $username 
+    useradd -m -G wheel -s /bin/bash $username 
 	passwd $username
 	cp -R /root/ArKuth /home/$username/
     chown -R $username: /home/$username/ArKuth
