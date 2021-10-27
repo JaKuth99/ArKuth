@@ -99,6 +99,8 @@ PKGS=(
 'rxvt-unicode'
 'lightdm'
 'lightdm-slick-greeter'
+'dunst'
+'zathura'
 )
 
 for PKG in "${PKGS[@]}"; do
