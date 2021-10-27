@@ -97,6 +97,8 @@ PKGS=(
 'xorg-xinit'
 'dhcpcd'
 'rxvt-unicode'
+'lightdm'
+'lightdm-slick-greeter'
 )
 
 for PKG in "${PKGS[@]}"; do
