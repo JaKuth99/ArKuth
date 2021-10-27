@@ -43,8 +43,8 @@ echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi' >> ~/.bash_profile
 cp -r ~/ArKuth/dotfiles/rofi ~/.config/
-cp -r ~/ArKuth/dotfiles/polybar ~/.config/polybar/
-cp -r ~/ArKuth/dotfiles/.i3 ~/.i3
+cp -r ~/ArKuth/dotfiles/polybar ~/.config/
+cp -r ~/ArKuth/dotfiles/.i3 ~/
 
 sleep 1
 
