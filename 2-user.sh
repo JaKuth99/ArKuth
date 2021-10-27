@@ -42,9 +42,9 @@ echo 'wal -R' >> ~/.xinitrc
 echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi' >> ~/.bash_profile
-cp -r ~/ArKuth/dotfiles/rofi/* ~/.config/rofi/
-cp -r ~/ArKuth/dotfiles/polybar/* ~/.config/polybar/
-cp -r ~/ArKuth/dotfiles/.i3/config ~/.config/i3/config
+cp -r ~/ArKuth/dotfiles/rofi ~/.config/
+cp -r ~/ArKuth/dotfiles/polybar ~/.config/polybar/
+cp -r ~/ArKuth/dotfiles/.i3 ~/.i3
 
 sleep 1
 
